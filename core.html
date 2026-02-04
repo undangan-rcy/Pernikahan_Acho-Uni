@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg" href="assets/icon/logo.svg" />
+    <title>Undangan Pernikahan - Akmal & Lisa</title>
+    <link rel="stylesheet" href="assets/css/aside_style.css" />
+    <link rel="stylesheet" href="assets/flipdown-master/src/flipdown.css" />
+    <script src="assets/flipdown-master/src/flipdown.js"></script>
+    <style>
+      /* Style Khusus Hitung Mundur sesuai Gambar */
+      .countdown-section {
+        background-image: url('assets/images/Pengantin.jpg'); /* Ganti dengan path background jika ingin gambar */
+        background-size: cover;
+        background-position: center;
+        padding: 40px 10px;
+        border-radius: 15px;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .countdown-title {
+        color: #ffffff; /* Warna tulisan judul hitung mundur */
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+      .countdown-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .countdown-label {
+        color: #333; /* Warna teks HARI, JAM, dll */
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+      .countdown-box {
+        background-color: #000000; /* Kotak Hitam */
+        color: #ffffff;           /* Angka Putih */
+        width: 65px;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: bold;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      }
+      @media (max-width: 480px) {
+        .countdown-box { width: 55px; height: 65px; font-size: 26px; }
+        .countdown-wrapper { gap: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="myAudio" autoplay loop>
+      <source src="assets/music/musik.mp3" type="audio/mpeg" />
+    </audio>
+    <button id="playButton" class="moon-button"></button>
+    <section id="sectionBesar">
+      <div class="pembungkus">
+        <p>THE WEDDING OF</p>
+        <h1>Acho & Uni</h1>
+        <p>11 . 02 . 2026</p>
+      </div>
+    </section>
+    <section id="sectionKecil">
+      <div class="cover" id="cover">
+        <img
+          src="assets/images/Pengantin.jpg"
+          alt="pengantin"
+          class="pengantin"
+        />
+        <p class="gowunbatang-bold">The Wedding Of</p>
+        <h1>Acho & Uni</h1>
+        <p class="gowunbatang-bold">11 . 02 . 2026</p>
+      </div>
+      <div class="ayat">
+        <p class="gowunbatang-bold judul appear">Surah Ar-Rum Ayat 21</p>
+        <div class="arab appear">
+          <p>
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+            لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ
+            إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
+          </p>
+        </div>
+        <div class="translation appear">
+          <p>
+            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+            pasangan-pasangan untukmu dari jenismu sendiri agar kamu cenderung
+            dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+            kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar
+            terdapat tanda-tanda bagi kaum yang berpikir."
+          </p>
+        </div>
+      </div>
+      <div class="mempelai">
+        <img src="assets/images/bismillah.png" alt="Bismillah" class="appear" />
+        <p class="appear">Assalamu'alaikum Warahmatullaahi Wabarakaatuh</p>
+        <p class="desk appear">
+          Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.
+          Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami.
+        </p>
+        <div class="pengantin-pria appear">
+          <img
+            src="assets/images/pengantin pria.jpg"
+            alt="pengantin pria"
+            class="foto"
+          />
+          <h1>Acho</h1>
+          <h3>Saipul</h3>
+          <p>
+            Anak Dari <br />
+            Bapak Baharuddin <br />
+            Dan Ibu Siti Hajra
+          </p>
+        </div>
+        <div class="dan appear">---- & ----</div>
+        <div class="pengantin-wanita appear">
+          <img
+            src="assets/images/pengantin wanita.jpeg"
+            alt="pengantin wanita"
+            class="foto"
+          />
+          <h1>Uni</h1>
+          <h3>Wahyuni lailasam</h3>
+          <p>
+            Anak Dari <br />
+            Bapak Nuhir Nuhung <br />
+            Dan Ibu Hj. Ariani
+          </p> <br /><br /><br />
+        </div>
+        <div class="acara">
+          <div class="akad appear">
+            <p class="judul">Akad Nikah</p>
+            <div class="tanggal">
+              <p class="angka">11</p>
+              <p class="teks">
+                Rabu<br />
+                Februari <br />
+                2026
+              </p>
+            </div>
+            <p class="teks">Pukul 10.00 WIT s/d Selesai</p>
+            <p class="garis">------------------</p>
+            <p class="Lokasi">
+              Lokasi Acara : <br />
+              Kompleks Masjid Quba pasar sentral,<br />
+              kediaman bapak Salehudin Fimbay, S.H., M.M. 
+            </p>
+          </div>
+        </div>
+
+        <div class="countdown-section appear">
+          <h1 class="countdown-title">Hitung Mundur</h1>
+          <div class="countdown-wrapper">
+            <div class="countdown-item">
+              <span class="countdown-label">Hari</span>
+              <div id="days" class="countdown-box">00</div>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-label">Jam</span>
+              <div id="hours" class="countdown-box">00</div>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-label">Menit</span>
+              <div id="minutes" class="countdown-box">00</div>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-label">Detik</span>
+              <div id="seconds" class="countdown-box">00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lokasi">
+        <h1 class="appear">Lokasi Acara</h1>
+        <p class="appear">Masjid Quba</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2938.398344894501!2d133.5373549!3d-2.1210776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d4e69d48604a905%3A0x803e721b49280fad!2sMasjid%20Quba!5e1!3m2!1sid!2sid!4v1770035468378!5m2!1sid!2sid" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <a href="https://maps.app.goo.gl/6KGYW4sUBT5nv2uq8" target="_blank" class="lihatPeta appear">Lihat Lokasi Acara</a>
+      </div>
+
+      <div class="galeri">
+        <h1 class="appear">--- Galeri ---</h1>
+        <div class="img-container appear">
+          <div class="mySlide">
+            <img src="assets/images/Pengantin.jpg" alt="pengantin" />
+          </div>
+          <div class="mySlide">
+            <img src="assets/images/pengantin pria.jpg" alt="pengantin" />
+          </div>
+          <div class="mySlide">
+            <img src="assets/images/pengantin wanita.jpeg" alt="pengantin" />
+          </div>
+          <a class="prev" onclick="plusSlide(-1)">❮</a>
+          <a class="next" onclick="plusSlide(1)">❯</a>
+        </div>
+      </div>
+
+      <div class="rsvp">
+        <h1 class="appear">RSVP & Ucapan</h1>
+        <form id="rsvpForm" class="appear">
+          <label for="name" style="font-size: 20px">Nama:</label>
+          <input type="text" id="name" name="name" required />
+          <div>
+            <p class="confirm">Konfirmasi Kehadiran:</p>
+            <div class="radio-box">
+              <div class="radio-container">
+                <input type="radio" id="yes" name="attendance" value="Hadir" required />
+                <label for="yes">Hadir</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" id="no" name="attendance" value="Tidak Hadir" required />
+                <label for="no">Tidak Hadir</label>
+              </div>
+            </div>
+          </div>
+          <label for="message" style="font-size: 20px">Ucapan/Doa:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">Kirim</button>
+          <div id="submittedData"></div>
+        </form>
+      </div>
+
+      <div class="hadiah">
+        <h1 class="appear">-- Hadiah Pernikahan --</h1>
+        <div class="card appear">
+          <div class="bank">
+            <img src="assets/icon/Logo-Bank-BRI.png" alt="bri" />
+            <p>11211211 <br /> A/N: Akmal</p>
+          </div>
+          <div class="atau">-------- Atau Scan --------</div>
+          <img src="assets/icon/qris.png" alt="qris" style="width: 80%" />
+        </div>
+      </div>
+
+      <div class="penutup" id="penutup">
+        <img src="assets/images/Pengantin.jpg" alt="pengantin" class="pengantin" />
+        <p class="gowunbatang-bold">
+          Ungkapan terima kasih yang tulus dari kami apabila
+          Bapak/Ibu/Teman-teman berkenan hadir dan memberikan do’a restu.
+        </p>
+        <p>Wassalamualaikum Warahmatullahi Wabarakatuh</p>
+        <p class="garis">--------------</p>
+        <p class="gowunbatang-bold">Turut berbahagia, segenap keluarga besar</p>
+        <h1>Acho & Uni</h1>
+      </div>
+    </section>
+
+    <script>
+      // Logika Countdown Sederhana
+      const targetDate = new Date("Feb 11, 2026 10:00:00").getTime();
+
+      const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          return;
+        }
+
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = d < 10 ? "0" + d : d;
+        document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+        document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+        document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+      }, 1000);
+    </script>
+    <script src="assets/js/core_script.js"></script>
+  </body>
+</html>
